@@ -1,0 +1,13 @@
+{
+  "name": "withladder-models-rethinkdb",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^4.1.0",
+    "rethinkdbdash": "^2.3.31"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1"
+  }
+}

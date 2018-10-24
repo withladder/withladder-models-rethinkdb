@@ -38,6 +38,8 @@ function runMigrations (op) {
   options.op = op
   // Object.assign方法用於對象的合併，注意，如果目標對象與源對象有同名屬性，或多個源對象有同名屬性，則後面的屬性會覆蓋前面的屬性。
   options = Object.assign({}, options, argv)
+  // 刪除options._ object入面的array
+  delete options._
 
   // 將D參數交比rethinkdb:migrate library搞
   Migrations.migrate(options)

@@ -2,9 +2,9 @@
 const config = {
   driver: 'rethinkdbdash',
   db: 'ladder',
-  host: '128.199.110.202',
+  host: 'localhost',
   port: 28015,
-  migrationsDirectory: 'api/migrations'
+  migrationsDirectory: 'migrations'
 }
 
 module.exports = config

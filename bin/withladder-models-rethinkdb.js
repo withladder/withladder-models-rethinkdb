@@ -12,6 +12,9 @@ if (cmd !== 'up') {
 
 // up 個陣搞啲乜就係下面寫出黎
 
+const parseArgs = require('minimist')
+const argv = parseArgs(process.argv.slice(2))
+
 // 載入rethinkdb-migrate
 const Migrations = require('rethinkdb-migrate')
 // 載入path
@@ -23,7 +26,7 @@ runMigrations('up')
 
 function runMigrations (op) {
   // 定義一個連線用options為object
-  const options = {
+  let options = {
     username: 'user',
     migrationsDirectory: path.join(__dirname, '..', 'migrations'),
     host: 'localhost',
@@ -33,6 +36,8 @@ function runMigrations (op) {
   }
   // options.op = op 參數
   options.op = op
+  // Object.assign方法用於對象的合併，注意，如果目標對象與源對象有同名屬性，或多個源對象有同名屬性，則後面的屬性會覆蓋前面的屬性。
+  options = Object.assign({}, options, argv)
 
   // 將D參數交比rethinkdb:migrate library搞
   Migrations.migrate(options)

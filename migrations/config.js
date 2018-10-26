@@ -1,4 +1,4 @@
-// database資料
+// 定義config,database資料
 const config = {
   driver: 'rethinkdbdash',
   db: 'ladder',
@@ -6,5 +6,5 @@ const config = {
   port: 28015,
   migrationsDirectory: 'migrations'
 }
-
+// 滙出config
 module.exports = config

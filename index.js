@@ -1,3 +1,4 @@
+// 定義一些function係user.js到提出
 const {
   getUsers,
   createOrFindUser,
@@ -9,7 +10,7 @@ const {
   getUserById,
   getUserByUsername
 } = require('./users')
-
+// 滙出上面定義的function
 module.exports = {
   getUsers,
   createOrFindUser,
